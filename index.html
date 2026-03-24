@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Optimization -->
+    <title>Charmin Mulugu | Business Administration & AI Tech Specialist</title>
+    <meta name="description" content="Official portfolio of Charmin Mulugu, a forward-thinking Business Administration student specializing in Data Analytics, Generative AI, and Operations Optimization in Hyderabad.">
+    <meta name="keywords" content="Charmin Mulugu, Business Administration, Data Analyst, Generative AI, Operations Optimization, Tech Portfolio, Machine Learning Basics, Hyderabad, Lingayaas Central University">
+    <meta name="author" content="Charmin Mulugu">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Social Media SEO -->
+    <meta property="og:title" content="Charmin Mulugu | Business & Tech Hybrid">
+    <meta property="og:description" content="Bridging the gap between business strategy and artificial intelligence. Explore my projects in data dashboards, process optimization, and tech market research.">
+    <meta property="og:type" content="website">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts for Futuristic Vibe -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Rajdhani:wght@400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Slate White Backgrounds
+                        slatewhite: {
+                            DEFAULT: '#f8fafc',
+                            alt: '#f1f5f9',
+                            darker: '#e2e8f0'
+                        },
+                        // Dark Blue Elements & Text
+                        deepblue: {
+                            DEFAULT: '#0f172a', // text/base elements
+                            accent: '#1e3a8a', // vibrant dark blue
+                            footer: '#020617'  // very dark blue for footer
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        tech: ['Rajdhani', 'sans-serif'],
+                        mono: ['Space Mono', 'monospace'],
+                    },
+                    backgroundImage: {
+                        'grid-pattern': "linear-gradient(to right, #e2e8f0 1px, transparent 1px), linear-gradient(to bottom, #e2e8f0 1px, transparent 1px)"
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #f8fafc;
+            /* Blueprint futuristic grid on light theme */
+            background-image: var(--tw-gradient-stops);
+            background-size: 40px 40px;
+            background-position: center center;
+            color: #0f172a;
+        }
+
+        .bg-grid {
+            background-image: 
+                linear-gradient(to right, rgba(15, 23, 42, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(15, 23, 42, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        /* Futuristic UI Elements */
+        .tech-border {
+            position: relative;
+            border: 1px solid #1e3a8a;
+            background: rgba(248, 250, 252, 0.9);
+            backdrop-filter: blur(4px);
+        }
+
+        .tech-border::before, .tech-border::after {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border: 2px solid #0f172a;
+            transition: all 0.3s ease;
+        }
+
+        .tech-border::before {
+            top: -2px;
+            left: -2px;
+            border-right: none;
+            border-bottom: none;
+        }
+
+        .tech-border::after {
+            bottom: -2px;
+            right: -2px;
+            border-left: none;
+            border-top: none;
+        }
+
+        .tech-border:hover::before, .tech-border:hover::after {
+            width: 16px;
+            height: 16px;
+            border-color: #1e3a8a;
+        }
+
+        .nav-link {
+            position: relative;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 600;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #1e3a8a;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Scroll Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Custom Selection */
+        ::selection {
+            background-color: #1e3a8a;
+            color: #f8fafc;
+        }
+    </style>
+</head>
+<body class="bg-slatewhite font-sans antialiased bg-grid min-h-screen flex flex-col relative selection:bg-deepblue-accent selection:text-white">
+
+    <!-- Sticky Navigation -->
+    <header class="fixed w-full top-0 z-50 bg-slatewhite/90 backdrop-blur-md border-b border-deepblue/10 shadow-sm">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-tech font-bold text-deepblue tracking-wider flex items-center gap-2">
+                <i class="ph ph-hexagon-fill text-deepblue-accent"></i>
+                CHARMIN<span class="text-deepblue-accent">.SYS</span>
+            </a>
+            
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-deepblue text-2xl focus:outline-none">
+                <i class="ph ph-list"></i>
+            </button>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex gap-8">
+                <a href="#about" class="nav-link text-deepblue">Initialization</a>
+                <a href="#projects" class="nav-link text-deepblue">Modules</a>
+                <a href="#skills" class="nav-link text-deepblue">Protocols</a>
+                <a href="#education" class="nav-link text-deepblue">Database</a>
+            </nav>
+        </div>
+        
+        <!-- Mobile Nav (Hidden by default) -->
+        <nav id="mobile-menu" class="hidden md:hidden bg-slatewhite border-b border-deepblue/10 p-4 flex-col gap-4 shadow-lg absolute w-full font-tech tracking-wider uppercase font-bold text-center">
+            <a href="#about" class="block text-deepblue hover:text-deepblue-accent py-2 border-b border-deepblue/5">Initialization</a>
+            <a href="#projects" class="block text-deepblue hover:text-deepblue-accent py-2 border-b border-deepblue/5">Modules</a>
+            <a href="#skills" class="block text-deepblue hover:text-deepblue-accent py-2 border-b border-deepblue/5">Protocols</a>
+            <a href="#education" class="block text-deepblue hover:text-deepblue-accent py-2">Database</a>
+        </nav>
+    </header>
+
+    <main class="flex-grow pt-24">
+        <!-- HERO SECTION -->
+        <section id="hero" class="max-w-6xl mx-auto px-6 py-20 md:py-32 flex flex-col md:flex-row items-center gap-12">
+            <div class="flex-1 space-y-6">
+                <div class="inline-block px-3 py-1 border border-deepblue-accent text-deepblue-accent font-mono text-xs uppercase tracking-widest bg-deepblue-accent/5">
+                    Status: Online // System Ready
+                </div>
+                <h1 class="text-5xl md:text-7xl font-tech font-bold text-deepblue leading-tight uppercase tracking-tight">
+                    Charmin <br/>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-deepblue to-deepblue-accent border-b-4 border-deepblue-accent">Mulugu</span>
+                </h1>
+                <p class="font-mono text-deepblue-accent/80 text-sm md:text-base tracking-wider uppercase">
+                    > Business Administration Student<br>
+                    > Data Analytics & AI Integration Specialist<br>
+                    > Operations Optimizer
+                </p>
+                <div class="pt-6 flex flex-wrap gap-4">
+                    <a href="#projects" class="px-8 py-3 bg-deepblue text-slatewhite font-tech font-bold uppercase tracking-wider hover:bg-deepblue-accent transition-colors duration-300 shadow-[4px_4px_0px_#1e3a8a] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_#1e3a8a]">
+                        Access Projects
+                    </a>
+                    <a href="https://github.com/Charmin-0612" target="_blank" class="px-8 py-3 border-2 border-deepblue text-deepblue font-tech font-bold uppercase tracking-wider hover:bg-deepblue/5 transition-colors duration-300 flex items-center gap-2">
+                        <i class="ph ph-github-logo text-xl"></i> GitHub Log
+                    </a>
+                </div>
+            </div>
+            <div class="flex-1 w-full relative reveal">
+                <!-- Abstract Futuristic Element representing the user -->
+                <div class="w-full aspect-square max-w-md mx-auto relative flex justify-center items-center">
+                    <div class="absolute inset-0 border border-deepblue/20 rounded-full animate-[spin_20s_linear_infinite]"></div>
+                    <div class="absolute inset-8 border border-dashed border-deepblue/30 rounded-full animate-[spin_30s_linear_infinite_reverse]"></div>
+                    <div class="absolute inset-16 border-2 border-deepblue-accent/20 rounded-full"></div>
+                    <div class="w-48 h-48 bg-slatewhite-darker border-4 border-deepblue flex items-center justify-center rotate-45 shadow-[10px_10px_0px_rgba(15,23,42,0.1)] relative overflow-hidden group">
+                        
+                        <!-- Profile Image (scaled to 145% to fill the rotated corners) -->
+                        <img src="charmin.jpeg" alt="Charmin Mulugu" class="absolute w-[145%] max-w-none h-[145%] object-cover -rotate-45 transition-transform duration-700 group-hover:scale-110" />
+                        
+                        <!-- Hover Overlay to keep the tech vibe -->
+                        <div class="absolute inset-0 bg-deepblue/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center -rotate-45 pointer-events-none">
+                            <div class="text-center text-slatewhite transform transition-transform duration-500 translate-y-4 group-hover:translate-y-0">
+                                <i class="ph ph-identification-card text-4xl mb-2"></i>
+                                <div class="font-tech font-bold tracking-widest text-sm">PROFILE.SYS</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="bg-slatewhite-alt border-y border-deepblue/10 py-20 relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-4 font-mono text-xs text-deepblue/20 select-none">SEQ: 001 // INITIALIZATION</div>
+            <div class="max-w-6xl mx-auto px-6 reveal">
+                <div class="flex items-center gap-4 mb-8">
+                    <h2 class="text-3xl md:text-4xl font-tech font-bold uppercase text-deepblue tracking-wider">Professional Synopsis</h2>
+                    <div class="h-px flex-grow bg-gradient-to-r from-deepblue-accent/50 to-transparent"></div>
+                </div>
+                
+                <article class="prose prose-lg prose-slate max-w-none text-deepblue/80 font-light leading-relaxed space-y-6">
+                    <p class="text-xl font-medium text-deepblue">
+                        I am a highly motivated Business Administration student with a foundational approach built on organizational leadership and agile team collaboration. 
+                    </p>
+                    <p>
+                        My professional journey is defined by an eagerness to bridge the gap between traditional business methodologies and cutting-edge technological advancements. I bring active problem-solving skills, extreme adaptability, and a high level of proficiency in core data management ecosystems—such as advanced Microsoft Excel—to drive strategic value in an entry-level technology or analytical role.
+                    </p>
+                    <p>
+                        Beyond traditional administration, I am deeply invested in understanding how data drives decisions. I am highly responsible and committed to generating positive, measurable results within dynamic organizations. By integrating modern AI tools and robust data analysis workflows into daily operations, I aim to transform raw informational bottlenecks into streamlined, automated, and scalable business solutions.
+                    </p>
+                </article>
+
+                <!-- Soft Skills Grid inside About -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+                    <div class="p-6 border border-deepblue/10 bg-slatewhite hover:border-deepblue-accent transition-colors duration-300">
+                        <i class="ph ph-chats text-3xl text-deepblue-accent mb-4"></i>
+                        <h3 class="font-tech font-bold text-xl uppercase tracking-wide mb-2">Communication</h3>
+                        <p class="text-sm text-deepblue/70">Mastering receptive active listening and executing highly effective verbal and written communication across cross-functional teams.</p>
+                    </div>
+                    <div class="p-6 border border-deepblue/10 bg-slatewhite hover:border-deepblue-accent transition-colors duration-300">
+                        <i class="ph ph-users-three text-3xl text-deepblue-accent mb-4"></i>
+                        <h3 class="font-tech font-bold text-xl uppercase tracking-wide mb-2">Synergy & Teamwork</h3>
+                        <p class="text-sm text-deepblue/70">A highly collaborative team player whose primary focus is engineered toward achieving and exceeding collective organizational goals.</p>
+                    </div>
+                    <div class="p-6 border border-deepblue/10 bg-slatewhite hover:border-deepblue-accent transition-colors duration-300">
+                        <i class="ph ph-compass text-3xl text-deepblue-accent mb-4"></i>
+                        <h3 class="font-tech font-bold text-xl uppercase tracking-wide mb-2">Leadership</h3>
+                        <p class="text-sm text-deepblue/70">Demonstrated ability to confidently lead, motivate, and guide teams through complex problem-solving scenarios and project lifecycles.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS SECTION -->
+        <section id="projects" class="py-20 max-w-6xl mx-auto px-6 relative">
+            <div class="absolute top-0 left-6 p-4 font-mono text-xs text-deepblue/20 select-none">SEQ: 002 // ACTIVE MODULES</div>
+            
+            <div class="flex items-center gap-4 mb-12 reveal">
+                <div class="w-12 h-1 bg-deepblue"></div>
+                <h2 class="text-3xl md:text-4xl font-tech font-bold uppercase text-deepblue tracking-wider">Project Deployments</h2>
+            </div>
+
+            <div class="space-y-12">
+                <!-- Project 1 -->
+                <article class="tech-border p-8 reveal group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-deepblue text-slatewhite text-xs font-mono px-3 py-1 z-10">MOD_01</div>
+                    <h3 class="text-2xl font-tech font-bold text-deepblue mb-2 group-hover:text-deepblue-accent transition-colors">Interactive Business Data Dashboard</h3>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-2 py-1 bg-deepblue/5 border border-deepblue/20 text-xs font-mono text-deepblue-accent uppercase">MS Excel</span>
+                        <span class="px-2 py-1 bg-deepblue/5 border border-deepblue/20 text-xs font-mono text-deepblue-accent uppercase">Data Analytics</span>
+                        <span class="px-2 py-1 bg-deepblue/5 border border-deepblue/20 text-xs font-mono text-deepblue-accent uppercase">Data Visualization</span>
+                    </div>
+                    <div class="text-deepblue/80 space-y-4 font-light leading-relaxed">
+                        <p>
+                            In an effort to master enterprise-level data handling, I sourced, scrubbed, and processed a comprehensive open-source business dataset. This project was designed from the ground up to rigorously simulate real-world corporate data management scenarios, dealing with thousands of rows of fragmented information.
+                        </p>
+                        <p>
+                            I engineered a dynamic, highly responsive dashboard utilizing advanced Microsoft Excel functionalities. By deploying complex Pivot Tables, nested VLOOKUPs, and modern XLOOKUP frameworks, I constructed an automated reporting structure. Furthermore, I designed intuitive interactive charts paired with logic-based conditional formatting to visually track, monitor, and evaluate Key Performance Indicators (KPIs) in real-time. 
+                        </p>
+                        <p class="font-medium text-deepblue border-l-2 border-deepblue-accent pl-4">
+                            Result: Successfully transformed raw, complex, and unorganized data repositories into clear, actionable business insights, directly supporting and streamlining data-driven decision-making processes.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Project 2 -->
+                <article class="tech-border p-8 reveal group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-deepblue text-slatewhite text-xs font-mono px-3 py-1 z-10">MOD_02</div>
+                    <h3 class="text-2xl font-tech font-bold text-deepblue mb-2 group-hover:text-deepblue-accent transition-colors">Operations & Process Optimization Plan</h3>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-2 py-1 bg-deepblue/5 border border-deepblue/20 text-xs font-mono text-deepblue-accent uppercase">Workflow Analysis</span>
+                        <span class="px-2 py-1 bg-deepblue/5 border border-deepblue/20 text-xs font-mono text-deepblue-accent uppercase">Strategic Planning</span>
+                        <span class="px-2 py-1 bg-deepblue/5 border border-deepblue/20 text-xs font-mono text-deepblue-accent uppercase">Documentation</span>
+                    </div>
+                    <div class="text-deepblue/80 space-y-4 font-light leading-relaxed">
+                        <p>
+                            Targeting operational inefficiencies, I conducted a deep-dive analysis of existing workflow infrastructures within a simulated organizational setting. The primary objective was to audit current practices, map out procedural steps, and definitively identify critical efficiency bottlenecks that were draining resources and slowing output.
+                        </p>
+                        <p>
+                            Following the audit, I conceptualized and designed a comprehensive strategic optimization plan. This plan proposed a completely streamlined new workflow architecture formulated to drastically improve resource allocation and maximize team output. I authored a formal, multi-page professional proposal detailing these findings, utilizing industry-standard formatting to clearly document the identified problems, the optimization methodology, and the projected efficiency gains.
+                        </p>
+                        <p class="font-medium text-deepblue border-l-2 border-deepblue-accent pl-4">
+                            Result: Demonstrated proactive leadership and strong critical thinking, resulting in a robust blueprint for continuous organizational improvement and waste reduction.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Project 3 -->
+                <article class="tech-border p-8 reveal group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-deepblue text-slatewhite text-xs font-mono px-3 py-1 z-10">MOD_03</div>
+                    <h3 class="text-2xl font-tech font-bold text-deepblue mb-2 group-hover:text-deepblue-accent transition-colors">Tech Industry Market Research Brief</h3>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-2 py-1 bg-deepblue/5 border border-deepblue/20 text-xs font-mono text-deepblue-accent uppercase">Market Research</span>
+                        <span class="px-2 py-1 bg-deepblue/5 border border-deepblue/20 text-xs font-mono text-deepblue-accent uppercase">Cloud & AI Trends</span>
+                        <span class="px-2 py-1 bg-deepblue/5 border border-deepblue/20 text-xs font-mono text-deepblue-accent uppercase">Competitive Analysis</span>
+                    </div>
+                    <div class="text-deepblue/80 space-y-4 font-light leading-relaxed">
+                        <p>
+                            To align my business education with the rapidly evolving technology sector, I spearheaded an in-depth market research initiative focused on emerging industry trends. The core scope of this research heavily emphasized the exponential growth of cloud infrastructure and the integration of Artificial Intelligence into legacy enterprise systems.
+                        </p>
+                        <p>
+                            I systematically gathered intelligence and authored a detailed competitive analysis report. This involved the difficult task of translating highly complex, technical concepts into a clear, digestible business narrative meant for executive stakeholders. I critically evaluated the operational impacts, cost-benefit ratios, and scalability of modern enterprise solutions.
+                        </p>
+                        <p class="font-medium text-deepblue border-l-2 border-deepblue-accent pl-4">
+                            Result: Synthesized extensive research data into a professional, well-written brief tailored specifically for a corporate technology environment, highlighting strong commercial awareness and acute business acumen.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- SKILLS SECTION -->
+        <section id="skills" class="bg-slatewhite-alt border-y border-deepblue/10 py-20 relative">
+            <div class="absolute top-0 right-0 p-4 font-mono text-xs text-deepblue/20 select-none">SEQ: 003 // PROTOCOLS & SYSTEMS</div>
+            <div class="max-w-6xl mx-auto px-6 reveal">
+                <div class="flex items-center gap-4 mb-12 justify-end">
+                    <h2 class="text-3xl md:text-4xl font-tech font-bold uppercase text-deepblue tracking-wider text-right">Technical Protocols</h2>
+                    <div class="w-12 h-1 bg-deepblue"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Category 1 -->
+                    <div class="bg-slatewhite p-6 border-l-4 border-deepblue shadow-sm">
+                        <h3 class="font-tech font-bold text-xl uppercase tracking-wide mb-4 text-deepblue flex items-center gap-2">
+                            <i class="ph ph-code-block text-deepblue-accent"></i> Programming & Libraries
+                        </h3>
+                        <p class="text-sm text-deepblue/70 mb-4 font-mono">Foundational coding languages and data processing libraries utilized for analytical tasks.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-deepblue text-slatewhite text-sm font-medium">Python (Basics)</span>
+                            <span class="px-3 py-1 bg-deepblue/10 text-deepblue border border-deepblue/20 text-sm">NumPy</span>
+                            <span class="px-3 py-1 bg-deepblue/10 text-deepblue border border-deepblue/20 text-sm">Pandas</span>
+                            <span class="px-3 py-1 bg-deepblue/10 text-deepblue border border-deepblue/20 text-sm">scikit-learn</span>
+                            <span class="px-3 py-1 bg-deepblue/10 text-deepblue border border-deepblue/20 text-sm">OpenCV</span>
+                            <span class="px-3 py-1 bg-deepblue text-slatewhite text-sm font-medium">C (Basics)</span>
+                        </div>
+                    </div>
+
+                    <!-- Category 2 -->
+                    <div class="bg-slatewhite p-6 border-l-4 border-deepblue shadow-sm">
+                        <h3 class="font-tech font-bold text-xl uppercase tracking-wide mb-4 text-deepblue flex items-center gap-2">
+                            <i class="ph ph-robot text-deepblue-accent"></i> AI & Development Tools
+                        </h3>
+                        <p class="text-sm text-deepblue/70 mb-4 font-mono">Modern tech stack integrating Generative AI models and cloud deployment platforms.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-deepblue/10 text-deepblue border border-deepblue/20 text-sm">ChatGPT</span>
+                            <span class="px-3 py-1 bg-deepblue/10 text-deepblue border border-deepblue/20 text-sm">Gemini</span>
+                            <span class="px-3 py-1 bg-deepblue/10 text-deepblue border border-deepblue/20 text-sm">Claude</span>
+                            <span class="px-3 py-1 bg-deepblue/10 text-deepblue border border-deepblue/20 text-sm">Perplexity</span>
+                            <span class="px-3 py-1 bg-deepblue/10 text-deepblue border border-deepblue/20 text-sm">Cursor</span>
+                            <span class="px-3 py-1 bg-deepblue/10 text-deepblue border border-deepblue/20 text-sm">lovable.dev</span>
+                            <span class="px-3 py-1 bg-deepblue/10 text-deepblue border border-deepblue/20 text-sm">GitHub</span>
+                            <span class="px-3 py-1 bg-deepblue/10 text-deepblue border border-deepblue/20 text-sm">Vercel</span>
+                            <span class="px-3 py-1 bg-deepblue/10 text-deepblue border border-deepblue/20 text-sm">Google Firebase</span>
+                            <span class="px-3 py-1 bg-deepblue/10 text-deepblue border border-deepblue/20 text-sm">Google Colab</span>
+                        </div>
+                    </div>
+
+                    <!-- Category 3 -->
+                    <div class="bg-slatewhite p-6 border-l-4 border-deepblue shadow-sm">
+                        <h3 class="font-tech font-bold text-xl uppercase tracking-wide mb-4 text-deepblue flex items-center gap-2">
+                            <i class="ph ph-globe-hemisphere-west text-deepblue-accent"></i> Domain Knowledge
+                        </h3>
+                        <p class="text-sm text-deepblue/70 mb-4 font-mono">Conceptual frameworks bridging business strategy and technological innovation.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-deepblue/10 text-deepblue border border-deepblue/20 text-sm">Machine Learning</span>
+                            <span class="px-3 py-1 bg-deepblue/10 text-deepblue border border-deepblue/20 text-sm">Generative AI</span>
+                            <span class="px-3 py-1 bg-deepblue/10 text-deepblue border border-deepblue/20 text-sm">AI-Driven Web Dev</span>
+                            <span class="px-3 py-1 bg-deepblue/10 text-deepblue border border-deepblue/20 text-sm">Business Strategy & Planning</span>
+                            <span class="px-3 py-1 bg-deepblue/10 text-deepblue border border-deepblue/20 text-sm">Content Creation</span>
+                            <span class="px-3 py-1 bg-deepblue/10 text-deepblue border border-deepblue/20 text-sm">Data Analytics</span>
+                        </div>
+                    </div>
+
+                    <!-- Category 4 -->
+                    <div class="bg-slatewhite p-6 border-l-4 border-deepblue shadow-sm">
+                        <h3 class="font-tech font-bold text-xl uppercase tracking-wide mb-4 text-deepblue flex items-center gap-2">
+                            <i class="ph ph-chart-line-up text-deepblue-accent"></i> Productivity & Ops
+                        </h3>
+                        <p class="text-sm text-deepblue/70 mb-4 font-mono">Enterprise tools utilized for daily workflow management, data sorting, and team synergy.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-deepblue text-slatewhite text-sm font-medium">Microsoft Excel (Advanced)</span>
+                            <span class="px-3 py-1 bg-deepblue/10 text-deepblue border border-deepblue/20 text-sm">Google Workspace</span>
+                            <span class="px-3 py-1 bg-deepblue/10 text-deepblue border border-deepblue/20 text-sm">Zoom</span>
+                            <span class="px-3 py-1 bg-deepblue/10 text-deepblue border border-deepblue/20 text-sm">MS Teams</span>
+                            <span class="px-3 py-1 bg-deepblue/10 text-deepblue border border-deepblue/20 text-sm">Saba Meeting/Centra</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCATION SECTION -->
+        <section id="education" class="py-20 max-w-4xl mx-auto px-6 relative">
+            <div class="absolute top-0 left-6 p-4 font-mono text-xs text-deepblue/20 select-none">SEQ: 004 // DATA ARCHIVE</div>
+            <div class="flex items-center gap-4 mb-12 reveal">
+                <div class="w-12 h-1 bg-deepblue"></div>
+                <h2 class="text-3xl md:text-4xl font-tech font-bold uppercase text-deepblue tracking-wider">Academic Database</h2>
+            </div>
+
+            <div class="relative border-l-2 border-deepblue/20 pl-8 space-y-12 py-4">
+                
+                <!-- Education 1 -->
+                <div class="relative reveal">
+                    <div class="absolute -left-[41px] top-1 w-5 h-5 bg-slatewhite border-4 border-deepblue rounded-full"></div>
+                    <div class="flex flex-col md:flex-row md:items-baseline md:justify-between mb-2">
+                        <h3 class="text-2xl font-tech font-bold text-deepblue uppercase">Lingayaas Central University</h3>
+                        <span class="font-mono text-sm text-deepblue-accent font-bold mt-1 md:mt-0">Oct 2022 - Jun 2025</span>
+                    </div>
+                    <p class="text-lg text-deepblue/80 font-medium mb-2">Business Administration</p>
+                    <div class="inline-block px-3 py-1 bg-deepblue text-slatewhite font-mono text-sm font-bold shadow-[2px_2px_0px_#1e3a8a]">
+                        CGPA: 7.9
+                    </div>
+                    <p class="mt-3 text-deepblue/70 text-sm font-light leading-relaxed">
+                        Currently pursuing a comprehensive curriculum focusing on organizational management, strategic operations, and business analytics. Developing a core understanding of enterprise architectures.
+                    </p>
+                </div>
+
+                <!-- Education 2 -->
+                <div class="relative reveal">
+                    <div class="absolute -left-[41px] top-1 w-5 h-5 bg-slatewhite border-4 border-deepblue/40 rounded-full"></div>
+                    <div class="flex flex-col md:flex-row md:items-baseline md:justify-between mb-2">
+                        <h3 class="text-xl font-tech font-bold text-deepblue uppercase">Urbane Junior College</h3>
+                        <span class="font-mono text-sm text-deepblue-accent mt-1 md:mt-0">2020 - 2022</span>
+                    </div>
+                    <p class="text-md text-deepblue/80 mb-2">Intermediate</p>
+                    <div class="inline-block px-3 py-1 border border-deepblue/30 text-deepblue font-mono text-sm">
+                        Marks: 467
+                    </div>
+                </div>
+
+                <!-- Education 3 -->
+                <div class="relative reveal">
+                    <div class="absolute -left-[41px] top-1 w-5 h-5 bg-slatewhite border-4 border-deepblue/20 rounded-full"></div>
+                    <div class="flex flex-col md:flex-row md:items-baseline md:justify-between mb-2">
+                        <h3 class="text-xl font-tech font-bold text-deepblue uppercase">Sri Chaitanya Techno School</h3>
+                        <span class="font-mono text-sm text-deepblue-accent mt-1 md:mt-0">Graduated: 2020</span>
+                    </div>
+                    <p class="text-md text-deepblue/80 mb-2">Secondary Schooling (10th Standard)</p>
+                    <div class="inline-block px-3 py-1 border border-deepblue/30 text-deepblue font-mono text-sm">
+                        CGPA: 9.2
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-deepblue-footer text-slatewhite border-t-4 border-deepblue-accent py-12 relative overflow-hidden">
+        <!-- Abstract background elements for footer -->
+        <div class="absolute inset-0 opacity-10 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.2)_50%,transparent_75%,transparent_100%)] bg-[length:20px_20px]"></div>
+        
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center border-b border-slatewhite/10 pb-8 mb-8">
+                <div>
+                    <h2 class="text-3xl font-tech font-bold uppercase tracking-widest mb-2 flex items-center gap-2">
+                        <i class="ph ph-terminal-window text-deepblue-accent"></i> Establish Connection
+                    </h2>
+                    <p class="text-slatewhite/60 font-light text-sm max-w-md">
+                        Open to entry-level roles bridging business administration and technology. System ready for data analytics, operations optimization, and AI tool integration tasks.
+                    </p>
+                </div>
+                <div class="flex flex-col space-y-4 md:items-end font-mono text-sm">
+                    <a href="mailto:Charminmulugu@gmail.com" class="flex items-center gap-3 hover:text-deepblue-accent transition-colors">
+                        <i class="ph ph-envelope-simple text-xl"></i> Charminmulugu@gmail.com
+                    </a>
+                    <a href="tel:+919908678230" class="flex items-center gap-3 hover:text-deepblue-accent transition-colors">
+                        <i class="ph ph-phone text-xl"></i> +91 9908678230
+                    </a>
+                    <div class="flex items-center gap-3 text-slatewhite/60">
+                        <i class="ph ph-map-pin text-xl"></i> Habsiguda, Hyderabad, 500007
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row justify-between items-center text-xs font-mono text-slatewhite/40">
+                <p>&copy; 2024 CHARMIN MULUGU. ALL SYSTEMS NOMINAL.</p>
+                <div class="flex gap-4 mt-4 md:mt-0">
+                    <a href="https://github.com/Charmin-0612" target="_blank" class="hover:text-slatewhite transition-colors">GITHUB_REPO</a>
+                    <span>//</span>
+                    <a href="#" class="hover:text-slatewhite transition-colors">BACK_TO_TOP</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Scroll Reveal Animation
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        
+        window.addEventListener("scroll", reveal);
+        // Trigger once on load
+        reveal();
+    </script>
+</body>
+</html>
